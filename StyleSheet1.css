@@ -1,0 +1,51 @@
+﻿body {
+    /* Quitamos los puntos negros de la lista y la ponemos en fila */
+    nav ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex; /* Esto alinea los botones uno al lado del otro */
+        gap: 10px; /* Deja una separación de 10px entre cada botón */
+    }
+        
+        nav ul li a {
+            display: block;
+            background-color: #3498db; 
+            color: white;
+            text-decoration: none; /* Le quita el subrayado feo */
+            padding: 10px 15px; /* Relleno interno para que parezca botón */
+            border-radius: 5px; /* Bordes sutilmente redondeados */
+            font-family: Arial, sans-serif;
+        }
+            /* Efecto cuando pasamos el mouse por encima del botón */
+            nav ul li a:hover {
+                background-color: #2980b9; 
+            }
+
+    h2 {
+        background-color: #e8f4f8; 
+        color: #2c3e50;
+        padding: 10px; /* Espacio entre el texto y el borde */
+        border-left: 5px solid #3498db; 
+        border-bottom: 1px solid #d6dbdf;
+        font-family: Arial, sans-serif;
+    }
+
+    .tarjeta {
+        background-color: #f4f9fc; 
+        border: 1px solid #3498db; 
+        padding: 15px; /* Espacio adentro para que el texto no toque el borde */
+        margin-bottom: 15px; /* Separación para que no se pegue con la tarjeta de abajo */
+        border-radius: 8px; /* Bordes redondeados */
+        font-family: Arial, sans-serif;
+    }
+
+    #unico {
+        background-color: #fef9e7; 
+        border: 1px solid #f1c40f; 
+        padding: 15px;
+        margin-bottom: 15px;
+        border-radius: 8px;
+        font-family: Arial, sans-serif;
+    }
+}
