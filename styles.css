@@ -1,0 +1,514 @@
+/* ==========================================================================
+   --- VARIABLES GLOBALES (PALETA CROMÁTICA NATURALEZA VIVA) ---
+   ========================================================================== */
+:root {
+    --verde-principal: #1b4332; /* Verde bosque profundo */
+    --verde-secundario: #4f772d; /* Verde oliva para acentos */
+    --terracota: #bc4749; /* Terracota/Naranja para botones destacados */
+    --crema-fondo: #f4f1de; /* Fondo tipo arena suave */
+    --blanco-tarjeta: #ffffff; /* Blanco para modular contenedores */
+    --texto-oscuro: #2d3142; /* Gris oscuro de alta legibilidad */
+    --transicion: all 0.3s ease;
+}
+
+/* --- RESETEO BÁSICO --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: var(--crema-fondo);
+    color: var(--texto-oscuro);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3 {
+    font-family: 'Merriweather', serif;
+    color: var(--verde-principal);
+}
+
+.section-padding {
+    padding: 5rem 8%;
+}
+
+.bg-alt {
+    background-color: rgba(27, 67, 50, 0.04);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+    .section-title h2 {
+        font-size: 2.3rem;
+        margin-top: 0.4rem;
+    }
+
+    .section-title p, .subtitle {
+        color: var(--verde-secundario);
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        font-size: 0.85rem;
+    }
+
+/* --- HEADER Y MENÚ --- */
+.header {
+    background-color: var(--blanco-tarjeta);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--verde-principal);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.navbar {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+    .navbar a {
+        text-decoration: none;
+        color: var(--texto-oscuro);
+        font-weight: 500;
+        transition: var(--transicion);
+    }
+
+        .navbar a:hover {
+            color: var(--verde-secundario);
+        }
+
+.btn-dona {
+    background-color: var(--terracota);
+    color: var(--blanco-tarjeta) !important;
+    padding: 0.6rem 1.6rem;
+    border-radius: 6px;
+    font-weight: 700;
+    box-shadow: 0 4px 10px rgba(188, 71, 73, 0.3);
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--verde-principal);
+}
+
+/* --- CORRECCIÓN INTEGRAL DEL CARRUSEL --- */
+.carousel {
+    position: relative;
+    height: 55vh; /* Proporción ideal para evitar zoom desproporcionado */
+    width: 100%;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.carousel-inner {
+    display: flex;
+    height: 100%;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carousel-item {
+    min-width: 100%;
+    position: relative;
+    height: 100%;
+}
+
+    .carousel-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Recorta sin estirar ni deformar */
+        object-position: center 25%; /* Desplaza el encuadre para enfocar los animales perfectamente */
+        filter: brightness(0.5); /* Oscurece el fondo para leer el texto cómodamente */
+    }
+
+.carousel-caption {
+    position: absolute;
+    top: 50%;
+    left: 8%;
+    transform: translateY(-50%);
+    color: var(--blanco-tarjeta);
+    max-width: 650px;
+}
+
+    .carousel-caption h1 {
+        color: var(--blanco-tarjeta);
+        font-size: 2.8rem;
+        margin-bottom: 0.8rem;
+    }
+
+.btn-caption {
+    display: inline-block;
+    background: var(--blanco-tarjeta);
+    color: var(--verde-principal);
+    padding: 0.7rem 1.5rem;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: var(--transicion);
+}
+
+    .btn-caption:hover {
+        background: var(--verde-secundario);
+        color: var(--blanco-tarjeta);
+    }
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.15);
+    border: none;
+    color: white;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .carousel-btn:hover {
+        background: var(--terracota);
+    }
+
+.prev {
+    left: 20px;
+}
+
+.next {
+    right: 20px;
+}
+
+/* --- NOSOTROS / IMPACTO --- */
+.about-container {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-text h2 {
+    font-size: 2.3rem;
+    margin-bottom: 1.2rem;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+}
+
+.stat-card {
+    background: var(--blanco-tarjeta);
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-left: 5px solid var(--verde-secundario);
+}
+
+    .stat-card i {
+        font-size: 2.2rem;
+        color: var(--terracota);
+    }
+
+.stat-number {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--verde-principal);
+}
+
+/* --- GRILLA DE ANIMALES NATIVOS --- */
+.animals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.animal-card {
+    background: var(--blanco-tarjeta);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+    transition: var(--transicion);
+}
+
+    .animal-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(27,67,50,0.08);
+    }
+
+    .animal-card img {
+        width: 100%;
+        height: 230px;
+        object-fit: cover;
+    }
+
+.animal-info {
+    padding: 1.5rem;
+}
+
+.animal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.8rem;
+}
+
+.tag {
+    background: rgba(79, 119, 45, 0.12);
+    color: var(--verde-secundario);
+    padding: 0.2rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+/* --- SECCIÓN CONTACTO --- */
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 3rem;
+    background: var(--verde-principal);
+    color: var(--blanco-tarjeta);
+    padding: 3.5rem;
+    border-radius: 16px;
+}
+
+.contact-info-panel h2 {
+    color: var(--blanco-tarjeta);
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+.contact-details {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+    .contact-details p {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .contact-details i {
+        color: var(--terracota);
+    }
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 6px;
+    border: 2px solid transparent;
+    outline: none;
+}
+
+    .form-group input:focus, .form-group textarea:focus {
+        border-color: var(--terracota);
+    }
+
+.btn-submit {
+    background: var(--terracota);
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transicion);
+}
+
+    .btn-submit:hover {
+        background-color: #a63c3e;
+    }
+
+/* --- SECCIÓN FAQ --- */
+.faq-container {
+    max-width: 750px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.faq-item {
+    background: var(--blanco-tarjeta);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 1.2rem 1.5rem;
+    text-align: left;
+    font-family: inherit;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--verde-principal);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background-color: #fbfbfb;
+}
+
+    .faq-answer p {
+        padding: 0 1.5rem 1.2rem 1.5rem;
+        font-size: 0.95rem;
+        color: #555;
+    }
+
+.faq-item.active .faq-question i {
+    transform: rotate(180deg);
+}
+
+/* --- FOOTER --- */
+.footer {
+    text-align: center;
+    padding: 2rem;
+    background: #112a1f;
+    color: rgba(255,255,255,0.5);
+    font-size: 0.9rem;
+}
+
+/* --- RESPONSIVIDAD MÓVIL --- */
+@media (max-width: 992px) {
+    .about-container, .contact-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 2rem;
+    }
+
+    .carousel-caption h1 {
+        font-size: 2rem;
+    }
+
+    .section-padding {
+        padding: 3.5rem 5%;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .navbar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--blanco-tarjeta);
+        padding: 1.5rem;
+        gap: 1.2rem;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+    }
+
+        .navbar.active {
+            display: flex;
+        }
+}
+/* --- ESTILOS EXTRA: LISTA DE ANIMALES RESCATADOS --- */
+.clicked-list-container {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 10px !important;
+}
+
+.stat-main-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.btn-ver-lista {
+    background: none;
+    border: none;
+    color: var(--verde-secundario);
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 0;
+    transition: var(--transicion);
+}
+
+    .btn-ver-lista:hover {
+        color: var(--terracota);
+    }
+
+.lista-desplegable {
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+}
+
+    .lista-desplegable ul {
+        list-style: none;
+        padding-top: 10px;
+        border-top: 1px dashed rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .lista-desplegable li {
+        font-size: 0.9rem;
+        color: var(--texto-oscuro);
+        display: flex;
+        justify-content: space-between;
+    }
+
+        .lista-desplegable li strong {
+            color: var(--verde-principal);
+        }
